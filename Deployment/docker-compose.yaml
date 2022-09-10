@@ -1,0 +1,60 @@
+version: "3.9"
+
+networks:
+  composed-network:
+    name: ExampleNetwork
+
+services:
+  firstapi:
+    container_name: FirstApi
+    build: 
+      dockerfile: ../src/FirstExampleApi/Dockerfile
+      context: ../src
+    ports:
+      - "81:80"
+    networks: [composed-network]
+    depends_on: [ postgres ]
+    deploy:
+      restart_policy: 
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+  
+  secondapi:
+    container_name: SecondApi
+    build:
+      dockerfile: ../src/SecondExampleApi/Dockerfile
+      context: ../src
+    ports:
+      - "82:80"
+    networks: [composed-network]
+    depends_on: [ redis ]
+  
+  thirdapi:
+    container_name: ThirdApi
+    build:
+      dockerfile: ../src/ThirdExampleApi/Dockerfile
+      context: ../src
+    ports:
+      - "83:80"
+    networks: [composed-network]
+    depends_on: [ mongo ]
+  
+  redis:
+    container_name: RedisComose
+    image: "redis:7.0.4-alpine"
+    networks: [composed-network]
+  
+  mongo:
+    container_name: MongoCompose
+    image: "mongo:5.0.12"
+    networks: [composed-network]
+  
+  postgres:
+    container_name: PostgresCompose
+    image: "postgres:14.5-alpine"
+    environment:
+      POSTGRES_PASSWORD: "alamakota123"
+    networks: [composed-network]
+    
