@@ -1,10 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstExampleApi", "FirstExampleApi\FirstExampleApi.csproj", "{40DF8D83-36FF-4ECF-A6E7-4E184AA56DD6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstExampleApi", "src\FirstExampleApi\FirstExampleApi.csproj", "{40DF8D83-36FF-4ECF-A6E7-4E184AA56DD6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecondExampleApi", "SecondExampleApi\SecondExampleApi.csproj", "{614FD911-8DEB-47F4-9869-DC0ED51A9F29}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecondExampleApi", "src\SecondExampleApi\SecondExampleApi.csproj", "{614FD911-8DEB-47F4-9869-DC0ED51A9F29}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThirdExampleApi", "ThirdExampleApi\ThirdExampleApi.csproj", "{C434EFE5-068F-48BC-B3A8-03C479FEC4CE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThirdExampleApi", "src\ThirdExampleApi\ThirdExampleApi.csproj", "{C434EFE5-068F-48BC-B3A8-03C479FEC4CE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{AC44FB0B-8EA2-4A84-9159-2697AC8AC6C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +26,10 @@ Global
 		{C434EFE5-068F-48BC-B3A8-03C479FEC4CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C434EFE5-068F-48BC-B3A8-03C479FEC4CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C434EFE5-068F-48BC-B3A8-03C479FEC4CE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{40DF8D83-36FF-4ECF-A6E7-4E184AA56DD6} = {AC44FB0B-8EA2-4A84-9159-2697AC8AC6C9}
+		{614FD911-8DEB-47F4-9869-DC0ED51A9F29} = {AC44FB0B-8EA2-4A84-9159-2697AC8AC6C9}
+		{C434EFE5-068F-48BC-B3A8-03C479FEC4CE} = {AC44FB0B-8EA2-4A84-9159-2697AC8AC6C9}
 	EndGlobalSection
 EndGlobal
