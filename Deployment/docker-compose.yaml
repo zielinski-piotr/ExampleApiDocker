@@ -42,7 +42,7 @@ services:
     depends_on: [ mongo ]
   
   redis:
-    container_name: RedisComose
+    container_name: RedisCompose
     image: "redis:7.0.4-alpine"
     networks: [composed-network]
   
