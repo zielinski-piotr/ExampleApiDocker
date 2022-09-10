@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstExampleApi", "FirstExampleApi\FirstExampleApi.csproj", "{40DF8D83-36FF-4ECF-A6E7-4E184AA56DD6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecondExampleApi", "SecondExampleApi\SecondExampleApi.csproj", "{614FD911-8DEB-47F4-9869-DC0ED51A9F29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThirdExampleApi", "ThirdExampleApi\ThirdExampleApi.csproj", "{C434EFE5-068F-48BC-B3A8-03C479FEC4CE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{40DF8D83-36FF-4ECF-A6E7-4E184AA56DD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40DF8D83-36FF-4ECF-A6E7-4E184AA56DD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40DF8D83-36FF-4ECF-A6E7-4E184AA56DD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40DF8D83-36FF-4ECF-A6E7-4E184AA56DD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{614FD911-8DEB-47F4-9869-DC0ED51A9F29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{614FD911-8DEB-47F4-9869-DC0ED51A9F29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{614FD911-8DEB-47F4-9869-DC0ED51A9F29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{614FD911-8DEB-47F4-9869-DC0ED51A9F29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C434EFE5-068F-48BC-B3A8-03C479FEC4CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C434EFE5-068F-48BC-B3A8-03C479FEC4CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C434EFE5-068F-48BC-B3A8-03C479FEC4CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C434EFE5-068F-48BC-B3A8-03C479FEC4CE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
