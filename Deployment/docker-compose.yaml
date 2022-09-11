@@ -7,15 +7,24 @@ networks:
 services:
   firstapi:
     container_name: FirstApi
-    build: 
+    build:
       dockerfile: ../src/FirstExampleApi/Dockerfile
       context: ../src
     ports:
       - "81:80"
-    networks: [composed-network]
+      - "4143:443"
+    networks: [ composed-network ]
+    environment:
+      ASPNETCORE_URLS: "https://+;http://+"
+      ASPNETCORE_HTTPS_PORT: 443
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_Kestrel__Certificates__Default__Password: "crypticpassword"
+      ASPNETCORE_Kestrel__Certificates__Default__Path: /https/aspnetapp.pfx
+    volumes:
+      - "${USERPROFILE}\\.aspnet\\https:/https/:ro"
     depends_on: [ postgres ]
     deploy:
-      restart_policy: 
+      restart_policy:
         condition: on-failure
         delay: 5s
         max_attempts: 3
@@ -28,7 +37,16 @@ services:
       context: ../src
     ports:
       - "82:80"
-    networks: [composed-network]
+      - "4243:443"
+    networks: [ composed-network ]
+    environment:
+      ASPNETCORE_URLS: "https://+;http://+"
+      ASPNETCORE_HTTPS_PORT: 443
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_Kestrel__Certificates__Default__Password: "crypticpassword"
+      ASPNETCORE_Kestrel__Certificates__Default__Path: /https/aspnetapp.pfx
+    volumes:
+      - "${USERPROFILE}\\.aspnet\\https:/https/:ro"
     depends_on: [ redis ]
   
   thirdapi:
@@ -38,23 +56,32 @@ services:
       context: ../src
     ports:
       - "83:80"
-    networks: [composed-network]
+      - "4343:443"
+    networks: [ composed-network ]
+    environment:
+      ASPNETCORE_URLS: "https://+;http://+"
+      ASPNETCORE_HTTPS_PORT: 443
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_Kestrel__Certificates__Default__Password: "crypticpassword"
+      ASPNETCORE_Kestrel__Certificates__Default__Path: /https/aspnetapp.pfx
+    volumes:
+      - "${USERPROFILE}\\.aspnet\\https:/https/:ro"
     depends_on: [ mongo ]
   
   redis:
     container_name: RedisCompose
     image: "redis:7.0.4-alpine"
-    networks: [composed-network]
+    networks: [ composed-network ]
   
   mongo:
     container_name: MongoCompose
     image: "mongo:5.0.12"
-    networks: [composed-network]
+    networks: [ composed-network ]
   
   postgres:
     container_name: PostgresCompose
     image: "postgres:14.5-alpine"
     environment:
       POSTGRES_PASSWORD: "alamakota123"
-    networks: [composed-network]
+    networks: [ composed-network ]
     
